@@ -1,0 +1,28 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group 'ru.axel'
+version '1.0.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation("com.zaxxer:HikariCP:5.0.1")
+    implementation('org.postgresql:postgresql:42.5.0')
+    implementation("ch.qos.logback:logback-classic:1.2.11")
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.0'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+application {
+    mainClass.set("ru.axel.connector.ConnectorPostgresExample")
+}
